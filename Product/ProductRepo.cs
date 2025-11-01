@@ -12,7 +12,7 @@ namespace Shop_Management_System.Product
     {
         private readonly string DBConnectionString = "Server=localhost;Database=ShopManagementDB;Trusted_Connection=true;";
 
-
+        // Product Repo Table;;;
         //               Id   |   Product_Name | Description |  Purchase_Price  |  Sale_Price   |  Discount
         //Placeholder    @id  |   @name          @des           @pPrice            @sPrice         @dis
         
