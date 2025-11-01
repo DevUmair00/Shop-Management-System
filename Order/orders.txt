@@ -1,0 +1,14 @@
+Customer,Umair,03221860648,123 norway st berlin
+Item,Zinger,2,200,202
+Item,Pizza,3,400,403
+Customer,Umair,03221860648,123 norway st berlin
+Item,Bag,1,400,401
+Item,Bottle,2,400,402
+Item,Geometry,2,200,202
+Customer,ali,0343802,13ek i32j
+Item,Apple,2,211,213
+Item,Banana,21,2333,2354
+Customer,ali,0343802,13ek i32j
+Item,yogurt,1,2133,2134
+Item,milk,2,2223,2225
+Item,herbs,2,2122,2124

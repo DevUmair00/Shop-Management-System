@@ -1,0 +1,7 @@
+SELECT TOP (1000) [ID]
+      ,[Product_Name]
+      ,[Description]
+      ,[Purchase_Price]
+      ,[Sale_Price]
+      ,[Discount]
+  FROM [ShopManagementDB].[dbo].[ProductTable]

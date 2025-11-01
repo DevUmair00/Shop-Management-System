@@ -1,0 +1,7 @@
+Bag,Lather Bag,2000,4000,200
+Shoes,School Shoes,200,300,20
+Jam,Manjo Jam,322,2322,32
+Jam,dkl,200,388,221
+Jam,Mango Jam,3233,30000,333
+Apple,Red Apple,22,3213,23
+Milk,Nestle Pure Milk,323,233,3223
