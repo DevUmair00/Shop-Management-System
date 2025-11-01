@@ -1,0 +1,5 @@
+SELECT TOP (1000) [Customer_Name]
+      ,[PhoneNumber]
+      ,[Age]
+      ,[Address]
+  FROM [ShopManagementDB].[dbo].[CustomerTable]

@@ -9,10 +9,10 @@ namespace Shop_Management_System.Customer
     internal class CustomerModel
     {
         public int ID { get; set; }
-        public string Name;
-        public string PhoneNumber;
-        public int Age;
-        public string Address;
+        public string Name {  get; set; }
+        public string PhoneNumber { get; set; }
+        public int Age { get; set; }
+        public string Address {  get; set; }
 
         public CustomerModel() { }
 

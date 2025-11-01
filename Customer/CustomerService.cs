@@ -17,24 +17,24 @@ namespace Shop_Management_System.Customer
 
         public void SaveCustomer(CustomerModel customer)
         {
-            customerRepo.SaveInFile(customer);
+            customerRepo.Create(customer);
         }
 
         public CustomerModel SearchCustomerByName(string name)
         {
-            foreach(CustomerModel c in customerRepo.GetAllCustomersFromFile())
+            CustomerModel customer = customerRepo.SearchCustomerByName(name);
+           
+           if(customer.Name == name)
             {
-                if(c.Name == name)
-                {
-                    return c;
-                }
+                return customer;
             }
+
             return null;
         }
 
         public bool UpdateCustomer(string name, string newName , string phoneNumber, int age, string address)
         {
-            List<CustomerModel> customers = customerRepo.GetAllCustomersFromFile();
+            List<CustomerModel> customers = customerRepo.GetAll();
             foreach (var customer in customers)
             {
                 if (customer.Name == name)
@@ -43,8 +43,8 @@ namespace Shop_Management_System.Customer
                     customer.PhoneNumber = phoneNumber;
                     customer.Age = age;
                     customer.Address = address;
-                    customerRepo.SaveAllDataIntoFile(customers);
-                    return true;
+
+                    if(customerRepo.Update(customer))return true;
                 }
             }
             return false;
@@ -52,14 +52,8 @@ namespace Shop_Management_System.Customer
 
         public bool DeleteCustomer(string name)
         { 
-            List<CustomerModel> customers = customerRepo.GetAllCustomersFromFile() ;
-
-            int count = 0;
-            count = customers.RemoveAll(c => c.Name == name);
-
-            if (count > 0)
+            if (customerRepo.Delete(name))
             {
-                customerRepo.SaveAllDataIntoFile(customers);
                 return true;
             }
             return false;
@@ -67,12 +61,12 @@ namespace Shop_Management_System.Customer
 
         public List<CustomerModel> GetAllCustomer()
         {
-            return customerRepo.GetAllCustomersFromFile();
+            return customerRepo.GetAll();
         }
         
         public List<CustomerModel> searchCustomersByname(string customerName)
         {
-            List <CustomerModel> GetAllCustomers = customerRepo.GetAllCustomersFromFile();
+            List <CustomerModel> GetAllCustomers = customerRepo.GetAll();
             List <CustomerModel> FilterCustomer = new List<CustomerModel>();
 
             foreach (var customer in GetAllCustomers)
@@ -87,7 +81,7 @@ namespace Shop_Management_System.Customer
 
         public List<CustomerModel> searchCustomersByFirstCharacter(string character)
         {
-            List<CustomerModel> GetAllCustomers = customerRepo.GetAllCustomersFromFile();
+            List<CustomerModel> GetAllCustomers = customerRepo.GetAll();
             List<CustomerModel> FilterCustomer = new List<CustomerModel>();
 
             foreach (var customer in GetAllCustomers)
@@ -105,7 +99,7 @@ namespace Shop_Management_System.Customer
 
         public List<CustomerModel> searchCustomerByPhoneNumber(string number)
         {
-            List<CustomerModel> GetAllCustomers = customerRepo.GetAllCustomersFromFile();
+            List<CustomerModel> GetAllCustomers = customerRepo.GetAll();
             List<CustomerModel> FilterCustomer = new List<CustomerModel>();
 
             foreach (var customer in GetAllCustomers)
@@ -120,7 +114,7 @@ namespace Shop_Management_System.Customer
 
         public List<CustomerModel> searchCustomersByAddress(string address)
         {
-            List<CustomerModel> GetAllCustomers = customerRepo.GetAllCustomersFromFile();
+            List<CustomerModel> GetAllCustomers = customerRepo.GetAll();
             List<CustomerModel> FilterCustomer = new List<CustomerModel>();
 
             foreach (var customer in GetAllCustomers)
@@ -135,7 +129,7 @@ namespace Shop_Management_System.Customer
 
         public List<CustomerModel> searchCustomersByAge(float age)
         {
-            List<CustomerModel> GetAllCustomers = customerRepo.GetAllCustomersFromFile();
+            List<CustomerModel> GetAllCustomers = customerRepo.GetAll();
             List<CustomerModel> FilterCustomer = new List<CustomerModel>();
 
             foreach (var customer in GetAllCustomers)

@@ -17,7 +17,7 @@ namespace Shop_Management_System.Customer
         public void CustomerDriver()
         {
             while (true)
-            {
+            {   
                 Console.Clear();
                 Console.ResetColor();
                 string option = CustomerMenu();

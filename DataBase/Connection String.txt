@@ -3,4 +3,4 @@ Data Source=localhost;Integrated Security=True;Persist Security Info=False;Pooli
 
 server : localhost
 DB name : ShopManagementDB
-Table name : [dbo].[ProductTable]  ,  
+Table name : [dbo].[ProductTable]  ,  [dbo].[CustomerTable]
